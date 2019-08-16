@@ -1,0 +1,26 @@
+.meeting-section-wrapper {
+  background: rgb(0, 143, 182);
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.meeting-section-top {
+  margin-bottom: 20px;
+}
+
+.meeting-section-title {
+  color: white;
+  font-size: 30px;
+}
+
+.meeting-card {
+  display: inline-block;
+  background: white;
+  height: 400px;
+  width: 300px;
+  margin-right: 10px;
+}
+

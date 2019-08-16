@@ -1,0 +1,35 @@
+<template>
+  <div class="meeting-section-wrapper">
+    <div class="meeting-section-top">
+      <h1 class="meeting-section-title">Today's Meetings</h1>
+    </div>
+    <div class="meeting-section-cards-wrapper">
+      <template for:each={meetings} for:item="meeting">
+        <div class="meeting-card" key={meeting.id}>
+          <div class="meeting-card-top">
+            <div class="meeting-card-logo-wrapper">
+              <p>Logo Here</p>
+            </div>
+            <div class="meeting-card-title-wrapper">
+              <h4>{meeting.title}</h4>
+            </div>
+            <div class="meeting-card-location-wrapper">
+              <p>{meeting.location}</p>
+            </div>
+          </div>
+    
+          <div class="meeting-card-bottom">
+            <div class="meeting-card-time-wrapper">
+              <h4>{meeting.time}</h4>
+              <small>TIME</small>
+            </div>
+            <div class="meeting-card-num-attendees-wrapper">
+              <h4>{meeting.numOfAttendees}</h4>
+              <small>ATTENDEES</small>
+            </div>
+          </div>
+        </div>
+      </template>
+    </div>
+  </div>
+</template>
