@@ -11,4 +11,8 @@ export default class MeetingSection extends LightningElement {
     {id: 'afga9fg', title: 'Meeting with Twitter', time: '1:00 - 2:00 PM', location: 'Fancy Conference Room', numOfAttendees: 18},
     {id: 'asd09fa9sd', title: 'Meeting with Instagram', time: '3:00 - 4:00 PM', location: 'Fancy Conference Room', numOfAttendees: 10}
   ];
+
+  handleCardClick(e) {
+    e.currentTarget.style.transform = 'rotateY(180deg)';
+  }
 }

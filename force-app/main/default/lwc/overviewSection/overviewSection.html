@@ -1,42 +1,75 @@
 <template>
   <div class="overview-section-wrapper">
     <div class="overview-tabs-wrapper">
-      <div class="overview-tab-wrapper">
-        <h1>Tasks</h1>
+      <!-- <div class="overview-tab-wrapper">
+        <button>Tasks</button>
       </div>
       <div class="overview-tab-wrapper">
-        <h1>Customers</h1>
+        <button>Customers</button>
       </div>
       <div class="overview-tab-wrapper">
-        <h1>My Team</h1>
+        <button>My Team</button>
       </div>
       <div class="overview-tab-wrapper">
-        <h1>Files</h1>
-      </div>
+        <button>Files</button>
+      </div> -->
+      <lightning-tabset>
+        <lightning-tab label="Tasks">
+          <div class="overview-tasks-content">
+            <div class="overview-cards-wrapper">
+              <div class="overview-card">
+                <div class="overview-card-left"></div>
+                <div class="overview-card-right">
+                  <div class="overview-card-number">
+                    <h2>43</h2>
+                  </div>
+                  <div class="overview-card-name">
+                    <p>To Do List</p>
+                  </div>
+                </div>
+              </div>
+              <div class="overview-card">
+                <div class="overview-card-left"></div>
+                <div class="overview-card-right">
+                  <div class="overview-card-number">
+                    <h2>892</h2>
+                  </div>
+                  <div class="overview-card-name">
+                    <p>In Progress</p>
+                  </div>
+                </div>
+              </div>
+              <div class="overview-card">
+                <div class="overview-card-left"></div>
+                <div class="overview-card-right">
+                  <div class="overview-card-number">
+                    <h2>350</h2>
+                  </div>
+                  <div class="overview-card-name">
+                    <p>Completed Tasks</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="overview-taskstable-wrapper">
+            <div class="overview-taskstable">
+              <div class="overview-taskstable-title">
+                <h1>My Tasks</h1>
+              </div>
+            </div>
+          </div>
+        </lightning-tab>
+        <lightning-tab label="Customers">
+          Customers Content
+        </lightning-tab>
+        <lightning-tab label="My Team">
+          My Team Content
+        </lightning-tab>
+        <lightning-tab label="Files">
+          Files Content
+        </lightning-tab>
+      </lightning-tabset>
     </div>
-    <div class="overview-cards-wrapper">
-      <div class="overview-todo-card-wrapper">
-        <div class="overview-card-left"></div>
-        <div class="overview-card-right">
-          <h2>42</h2>
-          <p>To Do List</p>
-        </div>
-      </div>
-      <div class="overview-inprogress-card-wrapper">
-        <div class="overview-card-left"></div>
-        <div class="overview-card-right">
-          <h2>892</h2>
-          <p>In Progress</p>
-        </div>
-      </div>
-      <div class="overview-completed-card-wrapper">
-        <div class="overview-card-left"></div>
-        <div class="overview-card-right">
-          <h2>350</h2>
-          <p>Completed</p>
-        </div>
-      </div>
-    </div>
-    <div class="overview-taskstable-wrapper"></div>
   </div>
 </template>

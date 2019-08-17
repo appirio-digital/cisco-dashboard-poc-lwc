@@ -1,3 +1,37 @@
-.overview-section-wrapper {
+.overview-card {
+  display: inline-block;
   background: white;
+  height:100px;
+  width:300px;
+  margin-right: 10px;
+  margin-left:10px;
+  box-shadow: 2px 2px 2px grey;
+  border-radius:5px;
+  text-align: center;
+}
+
+.overview-tabs-wrapper {
+  text-align: center;
+}
+
+.overview-cards-wrapper {
+  display: inline-block;
+}
+
+.overview-card-number {
+  font-size: 30px;
+}
+
+.overview-card-name {
+  color: gray;
+}
+
+.overview-taskstable {
+  height:500px;
+  width:1000px;
+  box-shadow: 2px 2px 2px grey;
+  border-radius:5px;
+}
+.overview-taskstable-title {
+  font-size: 30px;
 }

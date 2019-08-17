@@ -9,6 +9,9 @@
             "c/headerComponent": [
                 "headerComponent/headerComponent.js"
             ],
+            "c/meetingCard": [
+                "meetingCard/meetingCard.js"
+            ],
             "c/meetingSection": [
                 "meetingSection/meetingSection.js"
             ],

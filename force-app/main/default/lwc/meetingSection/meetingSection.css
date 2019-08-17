@@ -1,9 +1,6 @@
 .meeting-section-wrapper {
-  background: rgb(0, 143, 182);
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-  padding: 20px;
+  background: rgb(66, 158, 212);
+  padding: 50px;
   margin-top: 30px;
 }
 
@@ -16,11 +13,8 @@
   font-size: 30px;
 }
 
-.meeting-card {
-  display: inline-block;
-  background: white;
-  height: 400px;
-  width: 300px;
-  margin-right: 10px;
+.meeting-section-cards-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
-

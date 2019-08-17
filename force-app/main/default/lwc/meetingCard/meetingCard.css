@@ -1,0 +1,121 @@
+.meeting-card-wrapper {
+  position: relative;
+  display: inline-block;
+  height: 300px;
+  width: 300px;
+  margin: 0px 20px 20px 20px;
+  background: white;
+  border-radius: 5px;
+  box-shadow: 0px 7px 9px 0px rgba(0,0,0,0.4);
+  cursor: pointer;
+}
+
+.meeting-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+
+.meeting-card-front {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  background: white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.meeting-card-back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  background: white;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+/*  Front of card */
+.meeting-card-top {
+  padding: 20px;
+}
+
+.meeting-card-logo-wrapper {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+
+.meeting-card-bottom {
+  padding: 20px;
+  display: flex;
+  flex-direction: row;
+}
+
+.meeting-card-time-wrapper {
+  flex: 1;
+}
+
+.meeting-card-num-attendees-wrapper {
+  flex: 1;
+}
+
+.meeting-card-num-attendees-wrapper > h4, p {
+  text-align: center;
+}
+
+/*  Back of card */
+.meeting-card-top-back {
+  flex: 1;
+  padding: 20px;
+}
+
+.meeting-card-bottom-back {
+  flex: 2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background: lightgray;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px 15px;
+}
+
+.view-details-button {
+  margin-top: 20px;
+  height: 50px;
+  width: 90%;
+  background: #039FD9;
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.view-details-button:hover {
+  cursor: pointer;
+}
+
+.meeting-attendees-status {
+  flex: 1;
+}
+
+.meeting-attendees-wrapper {
+  flex: 1;
+}
+
+.meeting-attendees-pictures {
+  flex: 1; 
+  display: flex;
+}
+
+.meeting-attendees-pictures-img {
+  flex: 1;
+  border-radius: 50%;
+}
