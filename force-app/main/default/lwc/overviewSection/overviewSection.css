@@ -1,13 +1,12 @@
 .overview-card {
   display: inline-block;
   background: white;
-  height:100px;
-  width:300px;
   margin-right: 10px;
   margin-left:10px;
-  box-shadow: 2px 2px 2px grey;
+  box-shadow: 2px 2px 2px 2px grey;
   border-radius:5px;
   text-align: center;
+  width: 250px;
 }
 
 .overview-tabs-wrapper {
@@ -18,6 +17,14 @@
   display: inline-block;
 }
 
+.overview-card-left {
+  float: left;
+}
+
+.overview-card-right {
+  padding-top:8%;
+}
+
 .overview-card-number {
   font-size: 30px;
 }
@@ -26,12 +33,57 @@
   color: gray;
 }
 
-.overview-taskstable {
-  height:500px;
-  width:1000px;
-  box-shadow: 2px 2px 2px grey;
-  border-radius:5px;
+.overview-taskstable-wrapper {
+  text-align: center;
 }
+
+.overview-taskstable {
+  display: inline-block;
+  width:1000px;
+  box-shadow: 2px 2px 2px 2px grey;
+  border-radius:5px;
+  text-align: left;
+  padding-top:2%;
+  margin-top:2%; 
+}
+
 .overview-taskstable-title {
-  font-size: 30px;
+  font-size: 20px;
+  padding-left:2%;
+}
+
+.overview-taskstable-date {
+  font-size:15px;
+  display:inline-block;
+}
+
+.progress-ring__circle {
+  transition: 0.55s stroke-dashoffset;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.slds-tabs_default__link {
+  color:gray!important;
+}
+
+.task-wrapper {
+  border-bottom: 1px solid rgb(221, 219, 218);
+}
+
+.task-checkbox {
+  padding:1%;
+  display:inline-block;
+}
+.task-title {
+  display:inline-block;
+  font-size: 15px;
+}
+
+.status-dot {
+  height: 15px;
+  width: 15px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
 }

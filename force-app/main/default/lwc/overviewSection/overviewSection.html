@@ -18,10 +18,17 @@
           <div class="overview-tasks-content">
             <div class="overview-cards-wrapper">
               <div class="overview-card">
-                <div class="overview-card-left"></div>
+                <div class="overview-card-left">
+                  <div class="progress-ring-todo">
+                    <svg class="progress-ring" width="120" height="120">
+                      <circle class="progress-ring__circle" stroke="red" stroke-width="4" fill="transparent" r="38"
+                        cx="60" cy="60"></circle>
+                    </svg>
+                  </div>
+                </div>
                 <div class="overview-card-right">
                   <div class="overview-card-number">
-                    <h2>43</h2>
+                    <h2>{toDoCount}</h2>
                   </div>
                   <div class="overview-card-name">
                     <p>To Do List</p>
@@ -29,10 +36,17 @@
                 </div>
               </div>
               <div class="overview-card">
-                <div class="overview-card-left"></div>
+                <div class="overview-card-left">
+                  <div class="progress-ring-inprogress">
+                    <svg class="progress-ring" width="120" height="120">
+                      <circle class="progress-ring__circle" stroke="yellow" stroke-width="4" fill="transparent" r="38"
+                        cx="60" cy="60"></circle>
+                    </svg>
+                  </div>
+                </div>
                 <div class="overview-card-right">
                   <div class="overview-card-number">
-                    <h2>892</h2>
+                    <h2>{inProgressCount}</h2>
                   </div>
                   <div class="overview-card-name">
                     <p>In Progress</p>
@@ -40,10 +54,17 @@
                 </div>
               </div>
               <div class="overview-card">
-                <div class="overview-card-left"></div>
+                <div class="overview-card-left">
+                  <div class="progress-ring-completed">
+                    <svg class="progress-ring" width="120" height="120">
+                      <circle class="progress-ring__circle" stroke="green" stroke-width="4" fill="transparent" r="38"
+                        cx="60" cy="60"></circle>
+                    </svg>
+                  </div>
+                </div>
                 <div class="overview-card-right">
                   <div class="overview-card-number">
-                    <h2>350</h2>
+                    <h2>{completedCount}</h2>
                   </div>
                   <div class="overview-card-name">
                     <p>Completed Tasks</p>
@@ -54,8 +75,22 @@
           </div>
           <div class="overview-taskstable-wrapper">
             <div class="overview-taskstable">
-              <div class="overview-taskstable-title">
-                <h1>My Tasks</h1>
+              <div class="over-taskstable-header">
+                <div class="overview-taskstable-title">
+                  <h1>My Tasks</h1>
+                  <div class="overview-taskstable-date">
+                    <p>for: </p><input type="month">
+                  </div>
+                </div>
+              </div>
+              <div class="overview-taskstable-content">
+                <template for:each={tasks} for:item="task">
+                  <div class="task-wrapper" key={task.id}>
+                    <input class="task-checkbox" type="checkbox">
+                    <p class="task-title" key={task.id}>{task.title}</p>
+                    <span class="status-dot"></span>
+                  </div>
+                </template>
               </div>
             </div>
           </div>

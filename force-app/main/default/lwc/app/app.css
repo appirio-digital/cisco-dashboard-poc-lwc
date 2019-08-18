@@ -3,3 +3,7 @@
   height: 100vh;
   overflow: scroll;
 }
+
+.slds-p-around_x-large {
+  padding: 0 !important;
+}
