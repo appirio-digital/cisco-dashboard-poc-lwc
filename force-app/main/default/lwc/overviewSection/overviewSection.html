@@ -78,10 +78,15 @@
               <div class="over-taskstable-header">
                 <div class="overview-taskstable-title">
                   <h1>My Tasks</h1>
-                  <div class="overview-taskstable-date">
-                    <p>for: </p><input type="month">
-                  </div>
                 </div>
+                <div class="overview-tasktable-header-right">
+                    <div class="overview-taskstable-for">
+                      <p>for: </p>
+                    </div>
+                    <div class="overview-taskstable-date">
+                      <input type="month">
+                    </div>
+                  </div>
               </div>
               <div class="overview-taskstable-content">
                 <template for:each={tasks} for:item="task">
