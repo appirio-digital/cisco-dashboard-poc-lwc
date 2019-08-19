@@ -1,9 +1,9 @@
 import { LightningElement } from 'lwc';
-import HideLightningHeader from '@salesforce/resourceUrl/HideLightningHeader';
+import CSSUtils from '@salesforce/resourceUrl/CSSUtils';
 import { loadStyle } from 'lightning/platformResourceLoader';
 
 export default class App extends LightningElement {
   connectedCallback() {
-    loadStyle(this, HideLightningHeader);
+    loadStyle(this, CSSUtils);
   }
 }

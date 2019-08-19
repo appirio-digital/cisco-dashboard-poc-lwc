@@ -54,18 +54,18 @@
   z-index: 1;
   width: 70px;
   height: 90px;
-  background: #272B2F;
+  background: #272b2f;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 0 0 5px 5px;
-  box-shadow: 0px 7px 9px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 7px 9px 0px rgba(0, 0, 0, 0.4);
   transition: all 0.5s ease;
 }
 
 .header-menu:hover {
   cursor: pointer;
-  box-shadow: 0px 12px 20px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 12px 20px 0px rgba(0, 0, 0, 0.4);
 }
 
 .header-menu > div {
@@ -81,7 +81,7 @@
 
 .header-menu > div:before,
 .header-menu > div:after {
-  content: '';
+  content: "";
   position: absolute;
   z-index: 1;
   top: -10px;

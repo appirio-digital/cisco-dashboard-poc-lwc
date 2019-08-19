@@ -7,3 +7,9 @@
 .slds-p-around_x-large {
   padding: 0 !important;
 }
+
+.slds-template_default {
+  padding: 0 !important;
+  height: 100vh !important;
+  width: 100vw !important;
+}

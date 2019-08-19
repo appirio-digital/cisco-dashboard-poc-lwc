@@ -1,0 +1,21 @@
+header.flexipageHeader.slds-page-header.uiBlock.oneAnchorHeader {
+  display: none;
+}
+
+.slds-template_default {
+  padding: 0 !important;
+  height: 100vh !important;
+  width: 100vw !important;
+}
+
+.oneFlexipage {
+  padding-bottom: 0 !important;
+}
+
+.flexipageDefaultAppHomeTemplate .region {
+  margin: 0 auto;
+}
+
+.flexipageDefaultAppHomeTemplate {
+  margin: 0 auto;
+}

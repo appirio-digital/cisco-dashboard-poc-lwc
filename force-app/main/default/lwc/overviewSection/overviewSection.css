@@ -1,5 +1,18 @@
+.overview-tasks-content-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.overview-tasks-content {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .overview-card {
-  display: inline-block;
+  display: flex;
+  flex-direction: row;
   background: white;
   margin-right: 10px;
   margin-left: 10px;
@@ -14,7 +27,8 @@
 }
 
 .overview-cards-wrapper {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
 }
 
 .overview-card-left {
@@ -35,12 +49,20 @@
 }
 
 .overview-taskstable-wrapper {
+  display: flex;
   text-align: center;
+  justify-content: center;
+}
+
+.over-taskstable-header {
+  flex-direction: row;
+  display: flex;
 }
 
 .overview-taskstable {
-  display: inline-block;
-  width: 1000px;
+  display: flex;
+  flex-direction:column;
+  flex:1;
   box-shadow: 2px 2px 2px 2px grey;
   border-radius: 5px;
   text-align: left;
@@ -49,43 +71,36 @@
 }
 
 .overview-taskstable-title {
-  font-size: 20px;
+  font-size: 15px;
   padding-left: 2%;
-  display: inline-block;
+  display: flex;
+  flex:1
 }
 
 .overview-tasktable-header-right {
   text-align: right;
+  display:flex;
   padding-right:1%;
   padding-bottom:1%;
 }
 
 .overview-taskstable-for {
   font-size: 15px;
-  display: inline-block;
+  display: flex;
+  color: rgb(136,152,170);
 }
 
 .overview-taskstable-date {
   font-size: 15px;
-  display: inline-block;
+  display: flex;
 }
 
 .overview-taskstable-date input {
   border:none;
 }
 
-.progress-ring__circle {
-  transition: stroke-dashoffset 0.55s;
-  transform: rotate(-90deg);
-  transform-origin: 50% 50%;
-}
-
 .slds-tabs_default__link {
   color: gray !important;
-}
-
-.task-wrapper {
-  border-bottom: 1px solid rgb(221, 219, 218);
 }
 
 .task-checkbox {
@@ -96,18 +111,17 @@
 .task-title {
   display: inline-block;
   font-size: 15px;
+  padding-left: 2%;
 }
 
 .status-dot {
+  display:inline-block;
   height: 15px;
   width: 15px;
-  background-color: green;
+  background-color: rgb(114,176,78);
   border-radius: 50%;
-  display: inline-block;
-  float:right;
+  box-shadow: 1px 1px 1px 1px grey;
   margin-right:1%;
-
-
 }
 
 li.slds-tabs_default__item {

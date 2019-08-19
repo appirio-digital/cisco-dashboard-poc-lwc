@@ -1,14 +1,12 @@
-import {
-  LightningElement
-} from 'lwc';
+import {LightningElement} from 'lwc';
+//import getTaskList from '@salesforce/apex/TaskController.getTaskList';
 
 export default class OverviewSection extends LightningElement {
   toDoCount = 42;
   inProgressCount = 892;
   completedCount = 350;
 
-
-
+  //@track
   tasks = [{
       id: '12hj433',
       title: 'Set up meeting',
@@ -85,5 +83,11 @@ export default class OverviewSection extends LightningElement {
       status: 'To Do'
     }
   ];
+
+// @track tasks;
+// @track error;
+
+// @wire(getTaskList)
+// task;
 
 }
