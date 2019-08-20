@@ -17,6 +17,12 @@
             ],
             "c/overviewSection": [
                 "overviewSection/overviewSection.js"
+            ],
+            "c/overviewSectionTable": [
+                "overviewSectionTable/overviewSectionTable.js"
+            ],
+            "c/taskRow": [
+                "taskRow/taskRow.js"
             ]
         }
     },

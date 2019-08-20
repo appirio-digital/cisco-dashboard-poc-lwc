@@ -1,0 +1,29 @@
+.task-checkbox {
+  margin: 1%;
+  display: inline-block;
+}
+
+.task-title {
+  display: inline-block;
+  font-size: 15px;
+  padding-left: 2%;
+}
+
+.task-status {
+  display: flex;
+  flex-direction: row;
+}
+
+.status-text {
+  padding-left: 5%;
+}
+
+.status-dot {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  background-color: rgb(114, 176, 78);
+  border-radius: 50%;
+  box-shadow: 1px 1px 1px 1px grey;
+  margin-right: 1%;
+}

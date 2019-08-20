@@ -1,18 +1,6 @@
 <template>
   <div class="overview-section-wrapper">
     <div class="overview-tabs-wrapper">
-      <!-- <div class="overview-tab-wrapper">
-        <button>Tasks</button>
-      </div>
-      <div class="overview-tab-wrapper">
-        <button>Customers</button>
-      </div>
-      <div class="overview-tab-wrapper">
-        <button>My Team</button>
-      </div>
-      <div class="overview-tab-wrapper">
-        <button>Files</button>
-      </div> -->
       <lightning-tabset>
         <lightning-tab label="Tasks">
           <div class="overview-tasks-content-wrapper">
@@ -22,15 +10,8 @@
                   <div class="overview-card-left">
                     <div class="progress-ring-todo">
                       <svg class="progress-ring" width="120" height="120">
-                        <circle
-                          class="progress-ring__circle"
-                          stroke="rgb(237,111,90)"
-                          stroke-width="5"
-                          fill="transparent"
-                          r="38"
-                          cx="60"
-                          cy="60"
-                        ></circle>
+                        <circle class="progress-ring__circle" stroke="rgb(237,111,90)" stroke-width="5"
+                          fill="transparent" r="38" cx="60" cy="60"></circle>
                       </svg>
                     </div>
                   </div>
@@ -47,15 +28,8 @@
                   <div class="overview-card-left">
                     <div class="progress-ring-inprogress">
                       <svg class="progress-ring" width="120" height="120">
-                        <circle
-                          class="progress-ring__circle"
-                          stroke="rgb(238,202,138)"
-                          stroke-width="5"
-                          fill="transparent"
-                          r="38"
-                          cx="60"
-                          cy="60"
-                        ></circle>
+                        <circle class="progress-ring__circle" stroke="rgb(238,202,138)" stroke-width="5"
+                          fill="transparent" r="38" cx="60" cy="60"></circle>
                       </svg>
                     </div>
                   </div>
@@ -72,15 +46,8 @@
                   <div class="overview-card-left">
                     <div class="progress-ring-completed">
                       <svg class="progress-ring" width="120" height="120">
-                        <circle
-                          class="progress-ring__circle"
-                          stroke="rgb(178,213,155)"
-                          stroke-width="5"
-                          fill="transparent"
-                          r="38"
-                          cx="60"
-                          cy="60"
-                        ></circle>
+                        <circle class="progress-ring__circle" stroke="rgb(178,213,155)" stroke-width="5"
+                          fill="transparent" r="38" cx="60" cy="60"></circle>
                       </svg>
                     </div>
                   </div>
@@ -111,42 +78,7 @@
                     </div>
                   </div>
                   <div class="overview-taskstable-content">
-                    <table
-                      class="slds-table slds-table_cell-buffer slds-table_bordered"
-                    >
-                      <thead>
-                        <th class="" scope="col">
-                          <div>Description</div>
-                        </th>
-                        <th class="" scope="col">
-                          <div>Status</div>
-                        </th>
-                        <th class="" scope="col">
-                          <div>Comments</div>
-                        </th>
-                        <th class="" scope="col">
-                          <div>Assigned to</div>
-                        </th>
-                      </thead>
-                      <template for:each={tasks} for:item="task">
-                        <tr class="slds-hint-parent" key={task.OwnerId}>
-                          <td data-label="task-checkbox-title">
-                            <input class="task-checkbox" type="checkbox" />
-                            <p class="task-title" key={task.OwnerId}>
-                              {task.Subject}
-                            </p>
-                          </td>
-                          <td data-label="task-status">
-                            <!-- <span class="status-dot"></span> -->
-                            <p>{task.Status}</p>
-                          </td>
-                          <td data-label="task-comments"></td>
-                          <td data-label="task-assigned">
-                            <p>{task.OwnerId}</p>
-                          </td>
-                        </tr>
-                      </template>
-                    </table>
+                    <c-overview-section-table tasks={tasks}></c-overview-section-table>
                   </div>
                 </div>
               </div>

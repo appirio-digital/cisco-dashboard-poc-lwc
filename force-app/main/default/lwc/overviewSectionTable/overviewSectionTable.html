@@ -1,0 +1,45 @@
+<template>
+  <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+    <thead>
+      <th class="" scope="col">
+        <div>Description</div>
+      </th>
+      <th class="" scope="col">
+        <div>Status</div>
+      </th>
+      <th class="" scope="col">
+        <div>Comments</div>
+      </th>
+      <th class="" scope="col">
+        <div>Assigned to</div>
+      </th>
+    </thead>
+    <template for:each={tasks} for:item="task">
+      <tr class="slds-hint-parent" key={task.Subject}>
+        <td data-label="task-checkbox-title">
+          <input class="task-checkbox" type="checkbox" />
+          <p class="task-title">
+            {task.Subject}
+          </p>
+        </td>
+        <td data-label="task-status" class="task-status">
+          <template if:true={task.NotStarted}>
+            <span class="status-dot red"></span>
+          </template>
+          <template if:true={task.InProgress}>
+            <span class="status-dot yellow"></span>
+          </template>
+          <template if:true={task.Completed}>
+            <span class="status-dot green"></span>
+          </template>
+          <p class="status-text">{task.Status}</p>
+        </td>
+        <td data-label="task-comments"></td>
+        <td data-label="task-assigned">
+          <img class="profile-picture" src="https://via.placeholder.com/30" height="30px" width="30px"
+            alt="Profile Picture" />
+        </td>
+      </tr>
+    </template>
+  </table>
+</template>

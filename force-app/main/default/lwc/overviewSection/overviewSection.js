@@ -1,4 +1,9 @@
-import { LightningElement, track, wire } from 'lwc';
+import {
+  LightningElement,
+  track,
+  wire,
+  api
+} from 'lwc';
 import getTaskList from '@salesforce/apex/TaskController.getTaskList';
 
 
@@ -7,23 +12,40 @@ export default class OverviewSection extends LightningElement {
   @track inProgressCount = 0;
   @track completedCount = 0;
 
-  @track
-  tasks;
+  @api index;
 
-  @track
-  tasks_error;
+  @track tasks;
+
+  @track tasks_error;
 
   @wire(getTaskList)
-  wiredTasks({ error, data }) {
+  wiredTasks({
+    error,
+    data
+  }) {
     if (data) {
-      this.tasks = data;
-      this.countTasks(this.tasks);
+      if (data.length > 0) {
+        this.tasks = this.shapeTasks(data);
+        if (this.tasks.length > 0) {
+          this.countTasks(this.tasks);
+        }
+      }
       this.tasks_error = undefined;
-    }
-    else if (error) {
+    } else if (error) {
       this.tasks = [];
       this.tasks_error = error
     }
+  }
+
+  shapeTasks(data) {
+    return data.map(task => {
+      return {
+        ...task,
+        NotStarted: task.Status === "Not Started",
+        InProgress: task.Status === "In Progress",
+        Completed: task.Status === "Completed"
+      }
+    })
   }
 
   countTasks(tasksList) {
