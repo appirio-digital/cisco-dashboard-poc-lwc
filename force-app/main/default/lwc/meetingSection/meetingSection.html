@@ -2,15 +2,27 @@
   <div class="meeting-section-wrapper">
     <div class="meeting-section-top">
       <h1 class="meeting-section-title">Today's Meetings</h1>
-      <div class="meeting-section-top-right">
+      <!-- <div class="meeting-section-top-right">
         <button class="square-btn">View All</button>
         <button class="square-btn">Refresh</button>
         <button class="square-btn">New</button>
-      </div>
+      </div> -->
     </div>
     <div class="meeting-section-cards-wrapper">
-      <template for:each={meetings} for:item="meeting">
-        <c-meeting-card meeting={meeting} key={meeting.Id}></c-meeting-card>
+      <template if:true={meetings}>
+        <template for:each={meetings} for:item="meeting">
+          <c-meeting-card
+            meeting={meeting}
+            key={meeting.Id}
+            selected-id={selectedId}
+            select-meeting={selectMeeting}
+          ></c-meeting-card>
+        </template>
+      </template>
+      <template if:false={meetings}>
+        <div class="no-meetings-wrapper">
+          <h1>No meetings scheduled for today</h1>
+        </div>
       </template>
     </div>
   </div>

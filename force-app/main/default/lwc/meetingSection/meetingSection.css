@@ -3,6 +3,16 @@
   padding: 50px;
 }
 
+.no-meetings-wrapper {
+  height: 300px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 20px;
+}
+
 .meeting-section-top {
   display: flex;
   align-items: center;
