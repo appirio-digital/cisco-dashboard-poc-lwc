@@ -24,7 +24,7 @@
   font-size: 15px;
   padding-left: 2%;
   display: flex;
-  flex: 1
+  flex: 1;
 }
 
 .overview-tasktable-header-right {
@@ -69,12 +69,6 @@
   flex-direction: row;
 }
 
-.task-checkbox {
-  height: 20px;
-  width: 20px;
-  background: rgb(3, 159, 217);
-}
-
 .status-text {
   padding-left: 5%;
 }
@@ -89,17 +83,23 @@
 }
 
 .status-dot.red {
-  background: #FF6651;
+  background: #ff6651;
 }
 
 .status-dot.yellow {
-  background: #F5A622;
+  background: #f5a622;
 }
 
 .status-dot.green {
-  background: #44A942;
+  background: #44a942;
 }
 
 .profile-picture {
   border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-self: center;
+  justify-self: center;
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.4);
 }

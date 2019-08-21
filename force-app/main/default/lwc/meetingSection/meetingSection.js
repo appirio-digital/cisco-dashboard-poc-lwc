@@ -1,15 +1,10 @@
 import { LightningElement, track, wire } from 'lwc';
 import todaysMeetings from '@salesforce/apex/MeetingController.todaysMeetings';
-import getEventRelations from '@salesforce/apex/MeetingController.getEventRelations';
 
 export default class MeetingSection extends LightningElement {
-  @track selectedId = '';
-
   @track meetings;
   @track meetings_error;
-
-  @track eventRelations;
-  @track eventRelations_error;
+  @track selectedMeeting = '';
 
   @wire(todaysMeetings)
   wiredMeetings({ error, data }) {
@@ -26,22 +21,8 @@ export default class MeetingSection extends LightningElement {
     }
   }
 
-  connectedCallback() {
-    getEventRelations()
-      .then(result => {
-        this.eventRelations = result;
-        this.eventRelations_error = undefined;
-      })
-      .catch(error => {
-        this.eventRelations = undefined;
-        this.eventRelations_error = error;
-      });
-  }
-
-  selectMeeting(meetingId) {
-    console.log('selectMeeting()');
-    console.log('meetingId: ', meetingId);
-    this.selectedId = meetingId;
-    console.log('this.selectedId: ', this.selectedId);
+  selectMeeting(event) {
+    const meetingId = event.detail.id;
+    this.selectedMeeting = meetingId;
   }
 }

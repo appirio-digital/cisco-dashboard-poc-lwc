@@ -4,12 +4,7 @@
       <div class="meeting-card-front">
         <div class="meeting-card-top">
           <div class="meeting-card-logo-wrapper">
-            <img
-              src="https://via.placeholder.com/100"
-              height="100px"
-              width="100px"
-              alt="Logo Image"
-            />
+            <img src={logo} height="100px" width="100px" alt="Logo Image" />
           </div>
           <div class="meeting-card-title-wrapper">
             <h1>{meeting.Subject}</h1>
@@ -44,10 +39,10 @@
             <p>{attending} Members Going - {pending} Pending</p>
           </div>
           <div class="meeting-attendees-pictures">
-            <img src="https://via.placeholder.com/50" />
-            <img src="https://via.placeholder.com/50" />
-            <img src="https://via.placeholder.com/50" />
-            <img src="https://via.placeholder.com/50" />
+            <img src={profile_one} />
+            <img src={profile_two} />
+            <img src={profile_three} />
+            <img src={profile_four} />
           </div>
           <button class="view-details-button" onclick={navigateToMeeting}>
             View Details

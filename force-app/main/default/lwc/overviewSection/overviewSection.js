@@ -59,4 +59,10 @@ export default class OverviewSection extends LightningElement {
       }
     }
   }
+
+  setProgressRingToDo() {
+    const offset = 376.99 - 50 / 100 * 376.99;
+    this.template.querySelector('.progress-ring__circle').style.strokeDashoffset = offset;
+  }
+
 }

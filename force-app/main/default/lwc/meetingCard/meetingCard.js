@@ -1,10 +1,19 @@
 import { LightningElement, api, track } from 'lwc';
 import getEventRelations from '@salesforce/apex/MeetingController.getEventRelations';
 
+import AtlantaBravesLogo from '@salesforce/resourceUrl/AtlantaBravesLogo';
+import SAPLogo from '@salesforce/resourceUrl/SAPLogo';
+import MontanaStateLogo from '@salesforce/resourceUrl/MontanaStateLogo';
+import WiproLogo from '@salesforce/resourceUrl/WiproLogo';
+
+import ProfileOne from '@salesforce/resourceUrl/ProfileOne';
+import ProfileTwo from '@salesforce/resourceUrl/ProfileTwo';
+import ProfileFive from '@salesforce/resourceUrl/ProfileFive';
+import ProfileSeven from '@salesforce/resourceUrl/ProfileSeven';
+
 export default class MeetingCard extends LightningElement {
   @api meeting;
-  @api selectedId;
-  @api selectMeeting;
+  @api selectedMeeting;
 
   @track isFlipped = false;
   @track meetingStartDate = '';
@@ -14,29 +23,36 @@ export default class MeetingCard extends LightningElement {
   @track attending = 0;
   @track pending = 0;
   @track declined = 0;
-
+  @track logo;
+  profile_one = ProfileOne;
+  profile_two = ProfileTwo;
+  profile_three = ProfileFive;
+  profile_four = ProfileSeven;
 
   connectedCallback() {
+    // determine logo for event
+    this.determineLogo();
     // fetch event relations
     this.getEventRelations();
     // format date
     this.formatStartEndDate();
-    // determine if selected or not
-    this.hideOrShowCard()
   }
 
-  renderedCallback() {
-    console.log('-----------------------------------------------------');
-    console.log('renderedCallback()');
-    console.log('meeting.Id: ', this.meeting.Id);
-    console.log('selectedId: ', this.selectedId);
-    console.log('selectMeeting: ', this.selectMeeting);
-    console.log('-----------------------------------------------------');
-    this.hideOrShowCard();
+  determineLogo() {
+    if (this.meeting.Event_Logo_Path__c === "braves.png") {
+      this.logo = AtlantaBravesLogo;
+    } else if (this.meeting.Event_Logo_Path__c === "montana_state.png") {
+      this.logo = MontanaStateLogo;
+    } else if (this.meeting.Event_Logo_Path__c === "sap.png") {
+      this.logo = SAPLogo;
+    } else if (this.meeting.Event_Logo_Path__c === "wipro.png") {
+      this.logo = WiproLogo;
+    } else {
+      this.logo = 'https://via.placeholder.com/100';
+    }
   }
 
   async getEventRelations() {
-    // console.log('this.meeting.Id: ', this.meeting.Id);
     try {
       const result = await getEventRelations({ eventId: this.meeting.Id });
       this.eventRelations_error = undefined;
@@ -54,7 +70,6 @@ export default class MeetingCard extends LightningElement {
     } catch (error) {
       this.eventRelations_error = error;
       this.eventRelations = undefined;
-      // console.log('Error: ', error);
     }
   }
 
@@ -68,17 +83,9 @@ export default class MeetingCard extends LightningElement {
     this.meetingEndDate = dateTimeFormat.format(meetingEndDateTime);
   }
 
-  hideOrShowCard() {
-    // if the card is the selected card
-    console.log('-----------------------------------------------------');
-    console.log('hideOrShowCard()');
-    console.log('this.meeting.Id: ', this.meeting.Id);
-    console.log('this.selectedId: ', this.selectedId);
-    console.log('-----------------------------------------------------');
-    if (this.meeting.Id === this.selectedId) {
-      let meetingCard = this.template.querySelector('.meeting-card');
-      meetingCard.style.opacity = "0.5";
-    }
+  generateRandomColor() {
+    let randomIndex = Math.floor(Math.random() * (5 - 0 + 1) + 0);
+    this.backColor = this.colors[randomIndex];
   }
 
   handleCardClick(e) {
@@ -87,18 +94,25 @@ export default class MeetingCard extends LightningElement {
     if (this.isFlipped) {
       meetingCard.style.transform = "";
       this.isFlipped = false;
-      this.selectMeeting('');
-      this.setAttribute('selectedId', '');
+      this.dispatchEvent(new CustomEvent('select', { detail: { id: '' } }));
     } else {
       meetingCard.style.transform = "rotateY(180deg)";
       this.isFlipped = true;
-      this.selectMeeting(this.meeting.Id);
-      this.setAttribute('selectedId', this.meeting.Id);
+      const selectedEvent = new CustomEvent('select', { detail: { id: this.meeting.Id } });
+      this.dispatchEvent(selectedEvent);
     }
   }
 
+  // showOrHideCard() {
+  //   // NOT WORKING AT THE MOMENT
+  //   if (this.selectedMeeting === '') return;
+  //   if (this.meeting.Id !== this.selectedMeeting) {
+  //     let meetingCard = this.template.querySelector('.meeting-card');
+  //     meetingCard.style.opacity = "0.5";
+  //   }
+  // }
+
   handleViewDetailsClick(e) {
     e.preventDefault();
-    // console.log('handleViewDetailsClick!!!');
   }
 }

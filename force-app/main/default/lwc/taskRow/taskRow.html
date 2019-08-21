@@ -1,3 +1,16 @@
 <template>
-
+  <td data-label="task-checkbox-title">
+    <input class="task-checkbox" type="checkbox" />
+    <p class="task-title">
+      {task.Subject}
+    </p>
+  </td>
+  <td data-label="task-status" class="task-status">
+    <span class="status-dot"></span>
+    <p class="status-text">{task.Status}</p>
+  </td>
+  <td data-label="task-comments"></td>
+  <td data-label="task-assigned">
+    <p>??</p>
+  </td>
 </template>
