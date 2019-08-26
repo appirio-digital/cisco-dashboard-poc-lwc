@@ -58,7 +58,7 @@
   display: inline-block;
 }
 
-.task-title {
+.task-checkbox[type="checkbox"] + .label .task-title {
   display: inline-block;
   font-size: 15px;
   padding-left: 2%;

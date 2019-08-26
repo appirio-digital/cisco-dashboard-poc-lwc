@@ -5,7 +5,7 @@
         <lightning-tab label="Tasks">
           <div class="overview-tasks-content-wrapper">
             <div class="overview-cards-wrapper">
-              <div class="overview-card">
+              <div class="overview-card" onclick={showToDoTasks}>
                 <div class="overview-card-left">
                   <div class="progress-ring-todo">
                     <svg class="progress-ring" width="175" height="200">
@@ -30,7 +30,7 @@
                   </div>
                 </div>
               </div>
-              <div class="overview-card">
+              <div class="overview-card" onclick={showInProgressTasks}>
                 <div class="overview-card-left">
                   <div class="progress-ring-inprogress">
                     <svg class="progress-ring" width="175" height="200">
@@ -55,7 +55,7 @@
                   </div>
                 </div>
               </div>
-              <div class="overview-card">
+              <div class="overview-card" onclick={showCompletedTasks}>
                 <div class="overview-card-left">
                   <div class="progress-ring-completed">
                     <svg class="progress-ring" width="175" height="200">
@@ -87,6 +87,9 @@
                 <div class="over-taskstable-header">
                   <div class="overview-taskstable-title">
                     <h1>My Tasks</h1>
+                    <button class="view-all-btn" onclick={resetTodos}>
+                      View All
+                    </button>
                   </div>
                   <div class="overview-tasktable-header-right">
                     <div class="overview-taskstable-for">
@@ -98,9 +101,16 @@
                   </div>
                 </div>
                 <div class="overview-taskstable-content">
-                  <c-overview-section-table
-                    tasks={tasks}
-                  ></c-overview-section-table>
+                  <template if:true={filteredTasks}>
+                    <c-overview-section-table
+                      tasks={filteredTasks}
+                    ></c-overview-section-table>
+                  </template>
+                  <template if:false={filteredTasks}>
+                    <c-overview-section-table
+                      tasks={tasks}
+                    ></c-overview-section-table>
+                  </template>
                 </div>
               </div>
             </div>

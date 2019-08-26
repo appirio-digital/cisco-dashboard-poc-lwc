@@ -24,6 +24,7 @@ export default class MeetingCard extends LightningElement {
   @track pending = 0;
   @track declined = 0;
   @track logo;
+
   profile_one = ProfileOne;
   profile_two = ProfileTwo;
   profile_three = ProfileFive;

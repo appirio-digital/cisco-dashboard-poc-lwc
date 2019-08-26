@@ -9,20 +9,27 @@
       </div> -->
     </div>
     <div class="meeting-section-cards-wrapper">
-      <template if:true={meetings}>
-        <template for:each={meetings} for:item="meeting">
-          <c-meeting-card
-            meeting={meeting}
-            key={meeting.Id}
-            onselect={selectMeeting}
-            selected-meeting={selectedMeeting}
-          ></c-meeting-card>
-        </template>
-      </template>
-      <template if:false={meetings}>
+      <template if:true={loadingMeetings}>
         <div class="no-meetings-wrapper">
-          <h1>No meetings scheduled for today</h1>
+          <h1>Loading meetings...</h1>
         </div>
+      </template>
+      <template if:false={loadingMeetings}>
+        <template if:true={meetings}>
+          <template for:each={meetings} for:item="meeting">
+            <c-meeting-card
+              meeting={meeting}
+              key={meeting.Id}
+              onselect={selectMeeting}
+              selected-meeting={selectedMeeting}
+            ></c-meeting-card>
+          </template>
+        </template>
+        <template if:false={meetings}>
+          <div class="no-meetings-wrapper">
+            <h1>No meetings scheduled for today</h1>
+          </div>
+        </template>
       </template>
     </div>
   </div>

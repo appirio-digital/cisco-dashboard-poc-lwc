@@ -2,10 +2,16 @@
   <table class="slds-table slds-table_cell-buffer slds-table_bordered">
     <thead>
       <th class="" scope="col">
-        <div>Description</div>
+        <div>Subject</div>
       </th>
       <th class="" scope="col">
         <div>Status</div>
+      </th>
+      <th class="" scope="col">
+        <div>Priority</div>
+      </th>
+      <th class="" scope="col">
+        <div>Due Date</div>
       </th>
       <th class="" scope="col">
         <div>Comments</div>
@@ -17,7 +23,7 @@
     <template for:each={tasks} for:item="task">
       <tr class="slds-hint-parent" key={task.Subject}>
         <td data-label="task-checkbox-title">
-          <input class="task-checkbox" type="checkbox" />
+          <input class="task-checkbox" type="checkbox" checked />
           <p class="task-title">
             {task.Subject}
           </p>
@@ -34,7 +40,15 @@
           </template>
           <p class="status-text">{task.Status}</p>
         </td>
-        <td data-label="task-comments"></td>
+        <td data-label="task-priority" class="task-priority">
+          <p class="priority-text">{task.Priority}</p>
+        </td>
+        <td data-label="task-due-date" class="task-due-date">
+          <p class="priority-text">{task.ActivityDate}</p>
+        </td>
+        <td data-label="task-comments">
+          <p>{task.Description}</p>
+        </td>
         <td data-label="task-assigned">
           <img class="profile-picture" src={profile} alt="Profile Picture" />
         </td>
